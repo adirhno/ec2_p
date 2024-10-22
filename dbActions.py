@@ -1,4 +1,5 @@
 import boto3
+import uuid
 
 dynamodb_resource = boto3.resource('dynamodb', region_name='us-east-1')  # Specify your region
 table = dynamodb_resource.Table('pokemon')  # Replace with your table name
@@ -9,7 +10,7 @@ def addPokemon(pokemon):
     # Data to be inserted
     item = pokemon
     if 'id' not in item:
-        item['id'] = generate_unique_id()
+        item['id'] = uuid.uuid4()
     # Insert the item into the table
     table.put_item(Item=item)
     
