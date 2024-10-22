@@ -4,7 +4,7 @@ from dbActions import addPokemon, fetchFromDb
 def fetch_pokemon(name):
    response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{name}')
    responseData = response.json()['species']
-   print(f'{responseData['name']}')
+   print(f"{responseData['name']}")
    addPokemon(responseData)
 
 
