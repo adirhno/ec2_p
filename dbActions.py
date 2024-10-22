@@ -10,7 +10,7 @@ def addPokemon(pokemon):
     # Data to be inserted
     item = pokemon
     if 'id' not in item:
-        item['id'] = uuid.uuid4()
+        item['id'] = str(uuid.uuid4())
     # Insert the item into the table
     table.put_item(Item=item)
     
