@@ -8,6 +8,8 @@ def addPokemon(pokemon):
     print(pokemon)
     # Data to be inserted
     item = pokemon
+    if 'id' not in item:
+        item['id'] = generate_unique_id()
     # Insert the item into the table
     table.put_item(Item=item)
     
